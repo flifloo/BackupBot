@@ -63,23 +63,23 @@ async def backup_cmd(ctx: commands.Context):
 
 
 def setup(bot: commands.Bot):
-    logger.info(f"Loading of {extension_name} extension")
+    logger.info(f"Loading...")
     if not isdir("backup"):
         logger.info(f"Create backup folder")
         mkdir("backup")
     try:
         bot.add_command(backup_cmd)
     except Exception as e:
-        logger.error(f"Error loading extension {extension_name}: {e}")
+        logger.error(f"Error loading: {e}")
     else:
-        logger.info(f"Extension {extension_name} load successful")
+        logger.info(f"Load successful")
 
 
 def teardown(bot: commands.Bot):
-    logger.info(f"Unloading of {extension_name} extension")
+    logger.info(f"Unloading...")
     try:
         bot.remove_command("backup")
     except Exception as e:
-        logger.error(f"Error unloading extension {extension_name}: {e}")
+        logger.error(f"Error unloading: {e}")
     else:
-        logger.info(f"Extension {extension_name} unload successful")
+        logger.info(f"Unload successful")

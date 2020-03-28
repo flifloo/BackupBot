@@ -12,21 +12,21 @@ async def help_cmd(ctx):
 
 
 def setup(bot):
-    logger.info(f"Loading of {extension_name} extension")
+    logger.info(f"Loading...")
     try:
         bot.help_command = None
         bot.add_command(help_cmd)
     except Exception as e:
-        logger.error(f"Error loading extension {extension_name}: {e}")
+        logger.error(f"Error loading: {e}")
     else:
-        logger.info(f"Extension {extension_name} load successful")
+        logger.info(f"Load successful")
 
 
 def teardown(bot):
-    logger.info(f"Unloading of {extension_name} extension")
+    logger.info(f"Unloading...")
     try:
         bot.remove_command("help")
     except Exception as e:
-        logger.error(f"Error unloading extension {extension_name}: {e}")
+        logger.error(f"Error unloading: {e}")
     else:
-        logger.info(f"Extension {extension_name} unload successful")
+        logger.info(f"Unload successful")
