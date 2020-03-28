@@ -131,3 +131,6 @@ dmypy.json
 # Bot configuration
 config.json
 .idea
+
+# Bot backup file
+backup
